@@ -102,3 +102,20 @@ post.click(
 //     }
 //   }
 // );
+
+
+
+circle.click(
+  function (){
+    var circleActive = $(".fas.fa-circle.active");
+    var imgActive = $(".images img.active");
+    var thisIndex = $(this).index(".fas.fa-circle");
+    var is = $(".images").find("img");
+
+    circleActive.removeClass("active");
+    $(this).addClass("active");
+    imgActive.removeClass("active");
+    is.eq(thisIndex).addClass("active");
+
+  }
+);
