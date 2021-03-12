@@ -20,6 +20,20 @@ function backword(){
      lastImg.addClass("active");
   }
 
+  var circleActive = $(".fas.fa-circle.active")
+
+  if (!circleActive.hasClass("first")) {
+
+    circleActive.removeClass("active");
+    circleActive.prev().addClass("active");
+
+  } else {
+    var lastCircle = $(".fas.fa-circle.last")
+
+    circleActive.removeClass("active");
+    lastCircle.addClass("active");
+  }
+
 }
 
 function forward (){
@@ -36,6 +50,20 @@ function forward (){
 
      imgActive.removeClass("active");
      firstImg.addClass("active");
+  }
+
+  var circleActive = $(".fas.fa-circle.active")
+
+  if (!circleActive.hasClass("last")) {
+
+    circleActive.removeClass("active");
+    circleActive.next().addClass("active");
+
+  } else {
+    var firstCircle = $(".fas.fa-circle.first")
+
+    circleActive.removeClass("active");
+    firstCircle.addClass("active");
   }
 
 }
@@ -57,20 +85,20 @@ post.click(
   }
 );
 
-post.click(
-  function(){
-    var circleActive = $(".fas.fa-circle.active")
-
-    if (!circleActive.hasClass("last")) {
-
-      circleActive.removeClass("active");
-      circleActive.next().addClass("active");
-
-    } else {
-      var firstCircle = $(".fas.fa-circle.first")
-
-      circleActive.removeClass("active");
-      firstCircle.addClass("active");
-    }
-  }
-);
+// post.click(
+//   function(){
+//     var circleActive = $(".fas.fa-circle.active")
+//
+//     if (!circleActive.hasClass("last")) {
+//
+//       circleActive.removeClass("active");
+//       circleActive.next().addClass("active");
+//
+//     } else {
+//       var firstCircle = $(".fas.fa-circle.first")
+//
+//       circleActive.removeClass("active");
+//       firstCircle.addClass("active");
+//     }
+//   }
+// );
