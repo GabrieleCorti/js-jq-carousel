@@ -110,24 +110,33 @@ console.log(circle);
 //   }
 // );
 
-// $(document).keydown(
-//
-//   function(e){
-//
-//     if (e.which == 39){
-//
-//       forward();
-//       bulletforword();
-//
-//     } else if (e.which == 37) {
-//
-//       backword();
-//       bulletBackword();
-//
-//     }
-//   }
-//
-// );
+$(document).keydown(
+
+  function(e){
+
+    if (e.which == 37){
+
+      var imgActive = $(".images img.active");
+      var lastImg = $("img.last");
+      generalBackword(imgActive, lastImg);
+
+      var circleActive = $(".fas.fa-circle.active");
+      var lastCircle = $(".fas.fa-circle.last");
+      generalBackword(circleActive, lastCircle);
+
+    } else if (e.which == 39) {
+
+      var circleActive = $(".images img.active");
+      var firstCircle = $("img.first");
+      generalForward(circleActive, firstCircle);
+
+      var bulletActive = $(".fas.fa-circle.active");
+      var firstBullet = $(".fas.fa-circle.first");
+      generalForward(bulletActive, firstBullet);
+    }
+  }
+
+);
 
 ////// SOLO 2 FUNZIONI GENERICHE ////////
 
