@@ -20,13 +20,21 @@
 .slider-wrapper .images {
     height: 100%;
     text-align: center;
+    overflow: hidden;
 }
 .slider-wrapper .images img {
-    display: none;
-    height: 100%;
+    /* display: none; */
+    /* height: 100%; */
+    height: 0;
+    opacity: 0;
+    transform: translateX(50%);
 }
 .slider-wrapper .images img.active {
-    display: inline-block;
+    /* display: inline-block; */
+    height: 100%; /*aggiunto*/
+    transform: translateX(0%);/*aggiunto*/
+    opacity: 1; /*aggiunto*/
+    transition: transform 0.85s, opacity 0.9s; /*aggiunto*/
 }
 .prev, .next {
     position: absolute;
@@ -67,6 +75,7 @@
     margin: 0 20px;
     color: #0c1a27; /*aggiunto*/
     font-size: 9px; /*aggiunto*/
+    cursor: pointer;
 }
 .nav > i.active {
     color: #ffb380; /*aggiunto*/
